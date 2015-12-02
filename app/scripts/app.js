@@ -13,9 +13,14 @@ angular
     'ngAnimate',
     'ngAria',
     'ngRoute',
-    'ngTouch'
+    'ngTouch',
+    'ngMaterial'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+      .primaryPalette('blue')
+      .accentPalette('light-blue')
+      .warnPalette('orange');
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
