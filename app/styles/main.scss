@@ -1,9 +1,8 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "Skeleton-Sass/scss/skeleton.scss";
-@import "design-blue/scss/design-blue.scss";
 // endbower
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700italic,900italic,700,500italic,500,400italic,300,100italic,100,300italic);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800,900,700,600,500,300,200,100);
 
 .browsehappy {
   margin: 0.2em 0;
@@ -13,8 +12,86 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 body {
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
+}
+
+.carousel {
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  position: relative;
+  .buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 30;
+    div {
+      float: left;
+      input[type=radio] {
+        position: absolute;
+        left: -99999px;
+      }
+      input[type=radio] + label {
+        width: 25px;
+        height: 25px;
+        background-color: #CCC;
+        cursor: pointer;
+        z-index: 30;
+        margin: 5px;
+        opacity: 0.8;
+        box-shadow: 0 3px 3px rgba(0,0,0,0.5);
+        transition: background-color 250ms;
+      }
+      input[type=radio]:checked + label {
+        background-color: #AAA;
+      }
+    }
+  }
+
+  .carousel-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: #EEE;
+    background-position: center;
+    background-size: cover;
+    transition: opacity 0.5s, left 0.5s;
+    .content {
+      left: 0;
+      margin: 20px;
+      transition: left 0.75s;
+      position: absolute;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+      }
+    }
+  }
+  .carousel-img.ng-hide-add.ng-hide-add-active {
+    opacity: 0;
+    left: -25vw;
+    .content {
+      left: -30vw;
+    }
+  }
+  .carousel-img.ng-hide-add, .carousel-img.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+    left: 0;
+    .content {
+      left: 0;
+    }
+  }
+  .carousel-img.ng-hide-remove {
+    opacity: 0;
+    left: 25vw;
+    .content {
+      left: 30vw;
+    }
+  }
 }
 
 /* Responsive: Portrait tablets and up */
