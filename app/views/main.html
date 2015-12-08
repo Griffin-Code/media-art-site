@@ -1,17 +1,1 @@
-<div class="carousel">
-  <div class="buttons">
-    <div ng-repeat="item in carousels.main">
-      <input type="radio" name="carouselMain" id="carouselMainSlide{{$index}}"
-        ng-model="$carousel.main" value="{{$index}}" checked>
-      <label for="carouselMainSlide{{$index}}"></label>
-    </div>
-  </div>
 
-  <div class="carousel-img" ng-repeat="item in carousels.main" ng-show="$carousel.main == $index"
-    style="{{item.img &amp;&amp; 'background-image: url('+item.img+')'}}">
-    <div class="content">
-      <h1 ng-bind="item.title"></h1>
-      <p ng-bind="item.desc" class="delayed"></p>
-    </div>
-  </div>
-</div>
