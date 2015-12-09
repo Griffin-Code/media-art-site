@@ -14,6 +14,7 @@ angular
     'ngAria',
     'ngRoute',
     'ngTouch',
+    'ngHolder'
   ])
   .constant('_', window._)
   .config(function ($routeProvider) {
@@ -27,6 +28,11 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/works', {
+        templateUrl: 'views/works.html',
+        controller: 'WorksCtrl',
+        controllerAs: 'works'
       })
       .otherwise({
         redirectTo: '/'

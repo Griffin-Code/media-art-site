@@ -1,1 +1,27 @@
+<div class="container">
+  <h1 class="text-center">
+    <small>Los Alamitos High School</small><br>
+    Contemporary Media in Art
+  </h1>
+  <div  ng-repeat="content in frontContent">
+    <hr>
+    <div class="row content-row">
+      <div class="four columns" ng-if="$index%2==0">
+        <img ng-src="{{content.img}}" style="width: 100%">
+      </div>
+      <div class="eight columns" ng-class="$index%2==1 &amp;&amp; 'text-right'">
+        <h3 ng-bind="content.title"></h3>
+        <p ng-bind="content.body"></p>
 
+        <a ng-href="#/design/{{content.link}}" class="fa fa-arrow-left" ng-if="$index%2==1"></a>
+        <a href="javascript:void()" class="fa fa-heart" ng-if="$index%2==0"></a>
+        <a href="javascript:void()" class="fa fa-share-alt"></a>
+        <a ng-href="#/design/{{content.link}}" class="fa fa-arrow-right" ng-if="$index%2==0"></a>
+        <a href="javascript:void()" class="fa fa-heart" ng-if="$index%2==1"></a>
+      </div>
+      <div class="four columns" ng-if="$index%2==1">
+        <img ng-src="{{content.img}}" style="width: 100%">
+      </div>
+    </div>
+  </div>
+</div>
