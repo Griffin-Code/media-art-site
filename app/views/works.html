@@ -1,1 +1,25 @@
-<p>This is the works view.</p>
+<h1 class="text-center">Sample Student Works</h1>
+<div class="container">
+  <div class="row">
+    <div class="four columns" ng-repeat="work in studentWorks">
+      <div class="card vertical">
+        <img ng-src="{{work.img}}" class="thumbnail">
+        <div class="media">
+          <h4 ng-bind="work.title"></h4>
+          <h6 ng-bind="work.author+', '+work.project"></h6>
+          <p ng-bind="work.desc"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer style="position: relative">
+  <h4>Contemporary Media In Art</h4>
+  <p>This site has been designed for an in-class project.</p>
+
+  <p>
+    Designed by Matthew Struble at Vevox Digital<br>
+    Copyright &copy; Matthew Struble 2015 Some Rights Reserved<br>
+    <i>Myra ta Hayzel; Pal Kifitae te Entra en na Loka</i>
+  </p>
+</footer>
